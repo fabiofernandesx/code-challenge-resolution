@@ -4,7 +4,8 @@ const sqliteDb = {
   database: './data/codeChallenge.db3',
   synchronize: true,
   logging: false,
-  entities: ['src/Infrastructure/dbSchemas/*.ts'],
+  entities: ['src/Infrastructure/DbSchemas/*.ts'],
+  migrations: ['src/migration/**/*.ts'],
 };
 const inMemoryDb = {
   name: 'inMemoryDb',

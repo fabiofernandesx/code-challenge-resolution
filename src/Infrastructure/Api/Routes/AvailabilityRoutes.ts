@@ -1,12 +1,12 @@
-import { AvailabilityContract } from 'Controllers/Availability/AvailabilityController';
+import { AvailabilityContract } from '../../../Controllers/Availability/AvailabilityController';
 import { Router } from 'express';
-import adaptToExpressRoute from 'Infrastructure/Adapters/ExpressRouterAdapter';
-import AvailabilityControllerFactory from 'Infrastructure/Factories/AvailabilityControllerFactory';
-import { Availability } from 'Models/Availability';
+import adaptToExpressRoute from '../../Adapters/ExpressRouterAdapter';
+import AvailabilityControllerFactory from '../../Factories/AvailabilityControllerFactory';
+import { Availability } from '../../../Models/Availability';
 
-export default (router: Router): void => {
+export const AvailabilityRoute = (router: Router, connection: string): void => {
   router.get(
     '/availability',
-    adaptToExpressRoute<AvailabilityContract, Availability[]>(AvailabilityControllerFactory())
+    adaptToExpressRoute<AvailabilityContract, Availability[]>(AvailabilityControllerFactory(connection))
   );
 };

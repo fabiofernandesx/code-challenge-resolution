@@ -1,5 +1,5 @@
-import { HttpResponse, JsonError } from 'Interfaces/Http';
-import { FieldRequiredError } from 'UseCases/Errors';
+import { HttpResponse, JsonError } from '../../Interfaces/Http';
+import { FieldRequiredError } from '../../UseCases/Errors';
 export class ResponseHelper {
   getErrorResponse(error: Error): HttpResponse<null, JsonError> {
     let field = '';
